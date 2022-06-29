@@ -5,9 +5,9 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 // Pages
-import HomeContent from  './navigation/HomeContent'
-import DetailsContent from  './navigation/DetailsContent'
-import SettingsContent from  './navigation/SettingsContent'
+import HomeContent from  './HomeContent'
+import DetailsContent from  './DetailsContent'
+import SettingsContent from  './SettingsContent'
 
 const Tab = createMaterialBottomTabNavigator();
 

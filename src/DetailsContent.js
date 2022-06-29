@@ -1,34 +1,11 @@
 import React, { useState } from 'react';
 import { Image, SafeAreaView, ScrollView, View, Text, Pressable, StatusBar } from 'react-native';
-import { detailsColour } from './Colours.js'
+import { detailsColour } from './styling/Colours.js'
+import { DetailsContainer } from './components/Containers.js'
 
 let exampleContainers=[];
 for(let i = 0; i < 10; i++) {
     exampleContainers.push(i);
-}
-
-const SubContainer = ({ children }) => {
-    return (
-        <View 
-            style={{ 
-                flexDirection: "column",
-                flex: 1,
-                height: '20%',
-                paddingTop: 10,
-                paddingBottom: 10,
-                marginLeft: 20,
-                marginRight: 20,
-                marginTop: 20,
-                backgroundColor: '#E5E5E5',
-                borderWidth: 1,
-                borderRadius: 10,
-                borderColor: '#E5E5E5',
-                alignItems: 'center', 
-                }}
-        >
-            {children}
-        </View>
-    )
 }
 
 export default function DetailsContent({navigation}) {
@@ -37,7 +14,7 @@ export default function DetailsContent({navigation}) {
     return(
         <ScrollView style={{}}>
             <View>
-                <SubContainer>
+                <DetailsContainer>
                     <Text>You clicked {count} times</Text>
                          <Pressable
                             onPress={() =>{
@@ -60,12 +37,12 @@ export default function DetailsContent({navigation}) {
                                      Press me!
                                  </Text>
                          </Pressable>
-                </SubContainer>
+                </DetailsContainer>
                 {exampleContainers.map(current=>{
                     return (
-                    <SubContainer>
+                    <DetailsContainer>
                         <Text> Test Example {current} </Text>
-                    </SubContainer>
+                    </DetailsContainer>
                     );
                 })} 
             </View>
