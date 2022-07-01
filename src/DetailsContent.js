@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Image, SafeAreaView, ScrollView, View, Text, Pressable, StatusBar } from 'react-native';
+import { Image, SafeAreaView, ScrollView, View, Text, Pressable, StatusBar, FlatList } from 'react-native';
 import { detailsColour } from './styling/Colours.js'
 import { DetailsContainer } from './components/Containers.js'
+import { DetailsListData, DetailsListItem, DetailsRenderItem } from './components/FlatLists.js'
 
 let exampleContainers=[];
 for(let i = 0; i < 10; i++) {
@@ -37,6 +38,19 @@ export default function DetailsContent({navigation}) {
                                      Press me!
                                  </Text>
                          </Pressable>
+                </DetailsContainer>
+                <DetailsContainer>
+                    <Text>FlatList Example!</Text>
+                    <SafeAreaView style={{flex: 1}}>
+                        <FlatList
+                        horizontal={true}
+                        data={DetailsListData}
+                        renderItem={DetailsRenderItem}
+                        keyExtractor={item => item.id}
+                        style={{
+                        }}
+                        />
+                    </SafeAreaView>
                 </DetailsContainer>
                 {exampleContainers.map(current=>{
                     return (
